@@ -60,7 +60,7 @@ func (h *moduleHandler) Handle(_ context.Context, r slog.Record) error {
 		}
 	}
 
-	buf = append(buf, fmt.Sprintf(": %s", r.Message)...)
+	buf = append(buf, fmt.Sprintf(": %s.", r.Message)...)
 	r.Attrs(
 		func(a slog.Attr) bool {
 			buf = append(buf, fmt.Sprintf(" %s [%v].", a.Key, a.Value)...)
